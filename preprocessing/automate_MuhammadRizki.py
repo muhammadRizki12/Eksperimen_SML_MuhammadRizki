@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder # Encoder
 from sklearn.preprocessing import StandardScaler # Standarisasi
 
 # Memuat dataset
-df = pd.read_csv('../obesity_data_raw.csv')
+df = pd.read_csv('obesity_data_raw.csv')
 
 num_features = df.select_dtypes(include=[np.number]).columns
 cat_features = df.select_dtypes(include=['object']).columns
@@ -38,4 +38,4 @@ for column in cat_features:
     df[column] = label_encoder.fit_transform(df[column])
 
 # Simpan CSV ke folder tersebut
-df.to_csv('obesity_data_preprocessing.csv', index=False)
+df.to_csv('preprocessing/obesity_data_preprocessing.csv', index=False)
